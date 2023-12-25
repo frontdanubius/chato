@@ -1,0 +1,12 @@
+{
+  "rules": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      "messages": {
+          ".indexOn": ["timestamp"],
+          "$messageId": {
+              ".validate": "auth != null && newData.child('user').val() === auth.uid"
+          }
+      }
+  }
+}
